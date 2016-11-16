@@ -1,0 +1,52 @@
+Region: <%= @region %><br>
+NUmero PLanes: <%= @plan.count %><br>
+Sexo: <%= @sexo %><br>
+
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <ul class="list-unstyled">
+      <% i=1 %>
+      <% @plan.each do |plans| %>
+        <% @tablafactor.each do |tabla| %>
+          <% if (plans.codigo_tabla_factores == tabla.codigo_tabla) %>
+          <li>
+            <div class="well row <%= cycle('white-bg', '') %>">
+              <div>
+                <%= link_to plans do %>
+                  <% if (@sexo == 'Hombre') %>
+                    <p><%= i %><% i=i+1 %>
+                      <h3>
+                          Plan: <%= plans.nombre_plan %><p>
+                          Isapre: <%= plans.nombre_isapre %> <p>
+                          Precio Base: <%= plans.precio_base_plan %><br>
+                          Precio Base Final: <%= plans.precio_base_final %><br>
+                          Factor Edad: <%= tabla.cotizante_hombre %><br>
+                          GES: <%= plans.ges %><br>
+                          Precio: <%= ((plans.precio_base_final * tabla.cotizante_hombre)+plans.ges).round(2) %>
+                      </h3>
+                    <% elsif (@sexo == 'Mujer') %>
+                      <p><%= i %><% i=i+1 %>
+                        <h3>
+                            Plan: <%= plans.nombre_plan %><p>
+                            Isapre: <%= plans.nombre_isapre %> <p>
+                            Precio Base: <%= plans.precio_base_plan %><br>
+                            Precio Base Final: <%= plans.precio_base_final %><br>
+                            Factor Edad: <%= tabla.cotizante_mujer %><br>
+                            GES: <%= plans.ges %><br>
+                            Precio: <%= ((plans.precio_base_final * tabla.cotizante_mujer)+plans.ges).round(2) %>
+                        </h3>
+                      <% end %>
+                <% end %>
+                <p>
+              </div>
+            </div>
+          </li>
+          <% end %>
+
+        <% end %>
+
+      <% end %>
+    </ul>
+  </div>
+</div>

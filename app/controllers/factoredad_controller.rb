@@ -1,0 +1,2 @@
+class FactoredadController < ApplicationController
+end

@@ -1,0 +1,13 @@
+<%= form_tag("/planes/show", method: "get") do %>
+  <%= label_tag(:sex, "Sexo:") %>
+  <%= text_field_tag(:sex) %><br>
+  <%= label_tag(:age, "Edad:") %>
+  <%= text_field_tag(:age) %><br>
+  <%= label_tag(:carga, "Cargas:") %>
+  <%= text_field_tag(:carga) %><br>
+  <%= label_tag(:rentaB, "Renta Bruta:") %>
+  <%= text_field_tag(:rentaB) %><br>
+  <%= label_tag(:region, "Region:") %>
+  <%= text_field_tag(:region) %><br>
+  <%= submit_tag("Buscar Plan") %>
+<% end %>

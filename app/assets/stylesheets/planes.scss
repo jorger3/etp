@@ -1,0 +1,18 @@
+// Place all the styles related to the Planes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+    width: 450px;
+}
+.container ul {
+    padding: 0; /* remove default padding and all margins! */
+    margin: 0;
+    list-style-type: none; /* remove the • */
+}
+.container ul li {
+    width: 150px;
+    height: 100px;
+    background-color: red;
+    float: left;
+}
