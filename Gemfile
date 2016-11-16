@@ -19,7 +19,8 @@ gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
+gem 'jbuilder', '~> 2.6'
+gem 'multi_json', '1.11.2'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -30,12 +31,18 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
   gem 'database_cleaner'
+end
+
+group :development do
+  gem 'capistrano', '~> 3.6'
+  gem 'capistrano-rails', '~> 1.2'
 end
 
 group :development do
@@ -54,3 +61,4 @@ gem 'devise', '~> 4.2'
 gem 'activerecord-import', '~> 0.16.1'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-sass'
+gem 'heroku', '~> 3.43', '>= 3.43.14'
